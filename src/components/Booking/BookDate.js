@@ -7,9 +7,11 @@ import { useHistory } from 'react-router-dom';
 
 const BookDate = () => {
 	const [ hero ] = useContext(UserContext);
+	const [ loggedIn ] = useContext(UserContext);
 	const [ startDate, setStartDate ] = useState(new Date());
 	const [ endDate, setEndDate ] = useState(new Date());
 	const history = useHistory();
+	console.log(loggedIn);
 	const handleSubmit = (event) => {
 		event.preventDefault();
 		history.push('/search');
