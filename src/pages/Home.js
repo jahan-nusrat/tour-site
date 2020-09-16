@@ -1,7 +1,14 @@
 import React from 'react';
+import Hero from '../components/Hero/Hero';
+import Nav from '../components/Nav/Nav';
 
 const Home = () => {
-	return <h2>I am from home</h2>;
+	return (
+		<header>
+			<Nav />
+			<Hero />
+		</header>
+	);
 };
 
 export default Home;
