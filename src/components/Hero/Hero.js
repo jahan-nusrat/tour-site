@@ -2,6 +2,8 @@ import React, { useContext } from 'react';
 import './hero.css';
 import { UserContext } from '../../App';
 import fakeData from '../../fakeData/FakeData';
+import { Link } from 'react-router-dom';
+import { HeroStyle } from '../../styled-components/HomeSTyle';
 
 const Hero = () => {
 	const [ hero, setHero ] = useContext(UserContext);
@@ -10,21 +12,26 @@ const Hero = () => {
 	}
 
 	return (
-		<div className="hero-container">
+		<HeroStyle className="hero-container">
 			<div className="hero-info">
 				<h1>{hero.name}</h1>
 				<p>{truncate(hero.info, 250)}</p>
+				<Link to="/booking">
+					<button>Booking</button>
+				</Link>
 			</div>
 			<div className="hero-img">
-				{fakeData.map((data, idx) => {
+				{fakeData.map((data) => {
 					return (
 						<div
 							key={data.id}
-							className={data.name}
+							className={data.title}
 							onClick={() =>
 								setHero({
-									name : data.name,
-									info : data.info
+									name   : data.name,
+									info   : data.info,
+									img    : data.img,
+									active : true
 								})}
 						>
 							<img src={data.url} alt={data.name} />
@@ -32,7 +39,7 @@ const Hero = () => {
 					);
 				})}
 			</div>
-		</div>
+		</HeroStyle>
 	);
 };
 
