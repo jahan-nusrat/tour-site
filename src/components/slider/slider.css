@@ -1,0 +1,59 @@
+.active-slide-0 #card-0 .card-body {
+    border: 3px solid #F9A51A;
+    border-radius: 1.22rem;
+    box-shadow: 4px 7px 8px 1px rgb(0 0 0 / 20%);
+    transform: scale(1);
+    transition: all 0.3s;
+    overflow: hidden;
+}
+
+.active-slide-1 #card-1 .card-body {
+    border: 3px solid #F9A51A;
+    transform: scale(1);
+    transition: all 0.3s;
+    border-radius: 1.22rem;
+    overflow: hidden;
+    box-shadow: 4px 7px 8px 1px rgb(0 0 0 / 20%);
+}
+
+.active-slide-2 #card-2 .card-body {
+    border: 3px solid #F9A51A;
+    border-radius: 1.22rem;
+    box-shadow: 4px 7px 8px 1px rgb(0 0 0 / 20%);
+    transform: scale(1);
+    transition: all 0.3s;
+    overflow: hidden;
+}
+
+.card-body {
+    padding: 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.col-lg-4 {
+    padding-left: 15px !important;
+    padding-right: 0 !important;
+}
+
+.card-title {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.card {
+    border-radius: 1.2rem;
+}
+
+.active-slide-0 #card-0 .card-body img {
+    transform: scale(1.1);
+}
+
+.active-slide-1 #card-1 .card-body img {
+    transform: scale(1.1);
+}
+
+.active-slide-2 #card-2 .card-body img {
+    transform: scale(1.1);
+}

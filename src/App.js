@@ -1,14 +1,20 @@
 import React from 'react';
-import Slider from './components/Slider';
-import fakeData from './fakeData/FakeData';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import Home from './pages/Home';
+import NotFound from './pages/NotFound';
 
 const App = () => {
-	console.log(fakeData);
 	return (
-		<div>
-			<h2>I am home</h2>
-			<Slider />
-		</div>
+		<Router>
+			<Switch>
+				<Route exact={true} path="/">
+					<Home />
+				</Route>
+				<Route path="*">
+					<NotFound />
+				</Route>
+			</Switch>
+		</Router>
 	);
 };
 
