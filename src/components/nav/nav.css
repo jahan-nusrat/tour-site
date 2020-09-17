@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat&display=swap');
+.logo {
+    width: 120px;
+}
+
+.nav li {
+    margin: 0 0.5rem;
+    padding: 0 0.4rem;
+}
+
+.nav li a {
+    font-size: 1rem;
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.nav li:last-child {
+    background-color: #F9A51A;
+    padding: 0.2rem 0.5rem;
+    border-radius: 3px;
+}
+
+.login {
+    color: #000 !important;
+}
