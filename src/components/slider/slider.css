@@ -1,34 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat&display=swap');
+.hero-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #ffffff;
+    font-weight: 400;
+}
+
+.hero-box h1 {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 5rem;
+    letter-spacing: 2px;
+}
+
+.hero-box p {
+    font-family: 'Montserrat', sans-serif;
+    line-height: 24px;
+}
+
 .active-slide-0 #card-0 .card-body {
     border: 3px solid #F9A51A;
     border-radius: 1.22rem;
     box-shadow: 4px 7px 8px 1px rgb(0 0 0 / 20%);
-    transform: scale(1);
-    transition: all 0.3s;
-    overflow: hidden;
+    transition: all 0.2s ease;
 }
 
 .active-slide-1 #card-1 .card-body {
     border: 3px solid #F9A51A;
-    transform: scale(1);
-    transition: all 0.3s;
     border-radius: 1.22rem;
-    overflow: hidden;
     box-shadow: 4px 7px 8px 1px rgb(0 0 0 / 20%);
+    transition: all 0.2s ease;
 }
 
 .active-slide-2 #card-2 .card-body {
     border: 3px solid #F9A51A;
     border-radius: 1.22rem;
     box-shadow: 4px 7px 8px 1px rgb(0 0 0 / 20%);
-    transform: scale(1);
-    transition: all 0.3s;
-    overflow: hidden;
+    transition: all 0.2s ease;
 }
 
 .card-body {
     padding: 0;
     position: relative;
     overflow: hidden;
+}
+
+.card-body p {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 2rem;
 }
 
 .col-lg-4 {
@@ -38,22 +58,38 @@
 
 .card-title {
     position: absolute;
-    top: 0;
-    left: 0;
+    bottom: 20px;
+    left: 10px;
 }
 
 .card {
     border-radius: 1.2rem;
 }
 
-.active-slide-0 #card-0 .card-body img {
-    transform: scale(1.1);
+.angle {
+    text-align: center;
 }
 
-.active-slide-1 #card-1 .card-body img {
-    transform: scale(1.1);
+.prev, .next {
+    border: none;
+    height: 50px;
+    width: 50px;
+    border-radius: 50px;
+    margin: 4rem 0.8rem;
 }
 
-.active-slide-2 #card-2 .card-body img {
-    transform: scale(1.1);
+.next .right {
+    font-size: 1.5rem;
+}
+
+.prev .left {
+    font-size: 1.5rem;
+}
+
+.prev:focus {
+    outline: none;
+}
+
+.next:focus {
+    outline: none;
 }

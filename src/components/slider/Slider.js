@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './slider.css';
 import data from '../../fakeData/FakeData';
 import Card from './Card';
+import { FaAngleLeft, FaAngleRight } from 'react-icons/fa';
 
 class Slider extends Component {
 	state = {
@@ -23,24 +24,38 @@ class Slider extends Component {
 		});
 	};
 
+	truncate = (str, n) => {
+		return str.length > n ? str.substr(0, n - 1) + '.......' : str;
+	};
+
 	render () {
 		const { properties, property } = this.state;
 		return (
-			<div className="container row">
-				<div className="col-md-8">
-					<div className={`card-slider active-slide-${property.id}`}>
-						<div className="slider-wrapper row">
-							{properties.map((property) => <Card key={property.id} properties={property} />)}
+			<div className="container hero-box">
+				<div className="row align-items-center">
+					<div className="col-lg-4 px-3">
+						<h1>{property.name}</h1>
+						<p>{this.truncate(property.info, 250)}</p>
+					</div>
+					<div className="col-lg-8 px-5">
+						<div className={`card-slider active-slide-${property.id}`}>
+							<div className="slider-wrapper row">
+								{properties.map((property) => <Card key={property.id} properties={property} />)}
+							</div>
 						</div>
 					</div>
-					<div>
-						<button onClick={this.prevProperty} disabled={property.id === 0}>
-							Previous
-						</button>
-						<button onClick={this.NextProperty} disabled={property.id === properties.length - 1}>
-							Next
-						</button>
-					</div>
+				</div>
+				<div className="angle">
+					<button className="prev" onClick={this.prevProperty} disabled={property.id === 0}>
+						<FaAngleLeft className="left" />
+					</button>
+					<button
+						className="next"
+						onClick={this.NextProperty}
+						disabled={property.id === properties.length - 1}
+					>
+						<FaAngleRight className="right" />
+					</button>
 				</div>
 			</div>
 		);
@@ -48,4 +63,3 @@ class Slider extends Component {
 }
 
 export default Slider;
-//{ transform: `translateX(-${property.id * (100 / properties.length)}%)` }
