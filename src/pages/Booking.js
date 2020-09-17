@@ -1,8 +1,8 @@
 import React, { useContext } from 'react';
-import { UserContext } from '../App';
-import BookDate from '../components/Booking/BookDate';
 import Nav from '../components/Nav/Nav';
 import { BookingStyle } from '../styled-components/BookStyle';
+import BookDate from '../components/Booking/BookDate';
+import { UserContext } from '../App';
 
 const Booking = () => {
 	const [ hero ] = useContext(UserContext);

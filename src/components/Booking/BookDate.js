@@ -6,7 +6,7 @@ import 'react-datepicker/dist/react-datepicker.css';
 import { useHistory } from 'react-router-dom';
 
 const BookDate = () => {
-	const [ hero ] = useContext(UserContext);
+	const [ hero, setHero ] = useContext(UserContext);
 	const [ loggedIn ] = useContext(UserContext);
 	const [ startDate, setStartDate ] = useState(new Date());
 	const [ endDate, setEndDate ] = useState(new Date());

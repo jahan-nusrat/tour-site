@@ -16,7 +16,8 @@ const Hero = () => {
 			name   : data.name,
 			info   : data.info,
 			img    : data.img,
-			active : true
+			active : true,
+			id     : data.id
 		});
 	};
 

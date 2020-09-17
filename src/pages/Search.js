@@ -1,9 +1,12 @@
 import React from 'react';
+import Nav from '../components/Nav/Nav';
+import HotelRoom from '../components/Rooms/HotelRoom';
 
 const Search = () => {
 	return (
 		<div>
-			<h2>I am from Search</h2>
+			<Nav />
+			<HotelRoom />
 		</div>
 	);
 };

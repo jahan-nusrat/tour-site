@@ -1,10 +1,10 @@
-import React from 'react';
+/* import React from 'react';
 import { useContext } from 'react';
 import { Redirect, Route } from 'react-router-dom';
 import { UserContext } from '../App';
 
 function PrivateRoute ({ children, ...rest }) {
-	const [ loggedIn, setLoggedIn ] = useContext(UserContext);
+	const [ loggedIn ] = useContext(UserContext);
 	return (
 		<Route
 			{...rest}
@@ -24,3 +24,4 @@ function PrivateRoute ({ children, ...rest }) {
 }
 
 export default PrivateRoute;
+ */
