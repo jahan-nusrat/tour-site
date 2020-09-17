@@ -17,7 +17,9 @@ const Hero = () => {
 			info   : data.info,
 			img    : data.img,
 			active : true,
-			id     : data.id
+			id     : data.id,
+			lat    : data.lat,
+			long   : data.long
 		});
 	};
 

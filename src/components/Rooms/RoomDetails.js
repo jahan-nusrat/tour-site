@@ -3,11 +3,15 @@ import { UserContext } from '../../App';
 
 const RoomDetails = ({ data }) => {
 	const [ hero, setHero ] = useContext(UserContext);
-	console.log(data);
+	let location = {
+		lat  : hero.lat,
+		long : hero.long
+	};
+	console.log(location);
 	return (
 		<div className="container">
 			<div className="row justify-content-center">
-				<div className="col-lg-6">
+				<div className="col-lg-12">
 					<div className="row">
 						<div className="col-lg-6">
 							<img src={data.img} alt="" />
