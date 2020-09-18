@@ -9,16 +9,20 @@ import Navigation from '../components/nav/Navigation';
 
 const Hotels = () => {
 	let { slug } = useParams();
+	console.log(slug);
 	const [ bookingInfo, setBookingInfo ] = useContext(UserContext);
 	const [ placeHotels, setPlaceHotels ] = useState([]);
-	console.log(placeHotels);
-	useEffect(() => {
-		const filterHotels = fakeData.filter((hotel) => {
-			return hotel.slug === slug;
-		});
-		const { hotels } = filterHotels[0];
-		setPlaceHotels(hotels);
-	}, []);
+
+	useEffect(
+		() => {
+			const filterHotels = fakeData.filter((hotel) => hotel.slug === slug);
+			console.log(filterHotels);
+			const { hotels } = filterHotels[0];
+			setPlaceHotels(hotels);
+		},
+		[ slug ]
+	);
+	console.log(slug);
 
 	return (
 		<div className="hotels">
@@ -27,7 +31,7 @@ const Hotels = () => {
 				<hr />
 				<div className="details">
 					<p>252 stays Sep {bookingInfo.from} 3 guests</p>
-					<h2>Stay in {bookingInfo.destination}</h2>
+					<h2>Stay in {`${slug.toUpperCase()}`}</h2>
 				</div>
 				<div className="row">
 					<div className="room-details col-lg-7">
@@ -36,18 +40,14 @@ const Hotels = () => {
 						})}
 					</div>
 					<div className="map-details col-lg-5">
-						<p>
-							Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis, vero dicta nobis quod,
-							obcaecati natus repellendus consequuntur, nihil esse laboriosam iure similique doloremque ad
-							enim eum debitis. Ipsa, omnis inventore?
-						</p>
-						{/* <iframe
+						<iframe
+							title="Find Location"
 							width="470"
 							height="688"
 							frameborder="0"
-							src={`https://www.google.com/maps/embed/v1/place?key=AIzaSyCspGr1eo_7gDpc6NGHMplDVjRt1OZrDXI&q=${bookingInfo.destination}`}
+							src={`https://www.google.com/maps/embed/v1/place?key=AIzaSyCspGr1eo_7gDpc6NGHMplDVjRt1OZrDXI&q=${slug}`}
 							allowfullscreen
-						/> */}
+						/>
 					</div>
 				</div>
 			</div>

@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import './slider.css';
+import { Link } from 'react-router-dom';
 import data from '../../fakeData/FakeData';
 import Card from './Card';
-import { FaAngleLeft, FaAngleRight } from 'react-icons/fa';
+import { FaAngleLeft, FaAngleRight, FaArrowRight } from 'react-icons/fa';
 
 class Slider extends Component {
 	state = {
@@ -36,6 +37,11 @@ class Slider extends Component {
 					<div className="col-lg-4 px-3">
 						<h1>{property.name}</h1>
 						<p>{this.truncate(property.info, 250)}</p>
+						<Link to={`/${property.slug}`}>
+							<button className="btn btn-btn">
+								Booking <FaArrowRight />
+							</button>
+						</Link>
 					</div>
 					<div className="col-lg-8 px-5">
 						<div className={`card-slider active-slide-${property.id}`}>

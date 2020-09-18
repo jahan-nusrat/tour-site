@@ -1,12 +1,35 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { Link } from 'react-router-dom';
+import * as firebase from 'firebase/app';
+import 'firebase/auth';
+import { UserContext } from '../../App';
 import './nav.css';
+import firebaseConfig from '../firebase/firebase.config';
 
 const Navigation = ({ logo }) => {
+	if (!firebase.apps.length) {
+		firebase.initializeApp(firebaseConfig);
+	}
+
+	const [ loggedIn, setLoggedIn ] = useContext(UserContext);
+	const handleSignOut = () => {
+		firebase
+			.auth()
+			.signOut()
+			.then(function (res) {
+				setLoggedIn({});
+			})
+			.catch(function (error) {
+				console.log(error.message);
+			});
+	};
 	return (
 		<nav className="container py-2">
 			<div className="row justify-content-between align-items-center">
 				<div className="col-lg-2">
-					<img src={logo} alt="logo" className="img-fluid logo" />
+					<Link to="/">
+						<img src={logo} alt="logo" className="img-fluid logo" />
+					</Link>
 				</div>
 				<div className="col-lg-4">
 					<input className="form-control" type="text" />
@@ -27,9 +50,13 @@ const Navigation = ({ logo }) => {
 							<a href="#/contact">Contact</a>
 						</li>
 						<li>
-							<a className="login" href="#/login">
-								Login
-							</a>
+							{loggedIn.email ? (
+								<Link to="/" onClick={handleSignOut}>
+									Logout
+								</Link>
+							) : (
+								<Link to="/login">Login</Link>
+							)}
 						</li>
 					</ul>
 				</div>

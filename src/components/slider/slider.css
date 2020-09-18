@@ -37,6 +37,12 @@
     transition: all 0.2s ease;
 }
 
+.btn-btn {
+    background: #F9A51A;
+    font-family: 'Montserrat', sans-serif;
+    color: #000000;
+}
+
 .card-body {
     padding: 0;
     position: relative;

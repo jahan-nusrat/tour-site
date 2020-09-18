@@ -11,6 +11,8 @@ import google from '../../Icon/google.png';
 import firebaseConfig from '../../components/firebase/firebase.config';
 
 const Login = () => {
+	const [ bookingInfo, setBookingInfo ] = useContext(UserContext);
+
 	if (!firebase.apps.length) {
 		firebase.initializeApp(firebaseConfig);
 	}
@@ -19,15 +21,51 @@ const Login = () => {
 		email    : '',
 		password : ''
 	});
+
 	let history = useHistory();
 	let location = useLocation();
-	const { from } = location.state || { from: { pathname: '/' } };
+
+	const { from } = location.state || { from: { pathname: `hotels/${bookingInfo.slug}` } };
 	let provider = new firebase.auth.GoogleAuthProvider();
 	let fb = new firebase.auth.FacebookAuthProvider();
-	console.log(loggedIn);
+	const handleEmailPass = (e) => {
+		if (e.target.name === 'email') {
+			const regex = /\S+@\S+\.\S+/;
+			regex.test();
+		}
+		if (e.target.name === 'password') {
+			const regex = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,16}$/;
+			regex.test();
+		}
+		setUser({
+			...user,
+			[e.target.name]: e.target.value
+		});
+		setLoggedIn({
+			...loggedIn,
+			[e.target.name]: e.target.value
+		});
+	};
 
 	const formSubmit = (e) => {
 		e.preventDefault();
+		if (!user.email && !user.password) {
+			document.getElementById('error').innerText = 'Enter all vales correctly';
+			return;
+		}
+		firebase
+			.auth()
+			.signInWithEmailAndPassword(user.email, user.password)
+			.then((result) => {
+				setLoggedIn({
+					email    : user.email,
+					password : user.password
+				});
+				history.replace(from);
+			})
+			.catch((error) => {
+				document.getElementById('error').innerText = error.message;
+			});
 	};
 
 	const googleSign = () => {
@@ -44,7 +82,7 @@ const Login = () => {
 					email : user.email,
 					name  : user.displayName
 				});
-				history.replace(from);
+				history.push(`hotels/${bookingInfo.slug}`);
 			})
 			.catch(function (error) {
 				console.error(error.message);
@@ -65,7 +103,7 @@ const Login = () => {
 					email : user.email,
 					name  : user.displayName
 				});
-				history.replace(from);
+				history.push(`hotels/${bookingInfo.slug}`);
 			})
 			.catch(function (error) {
 				console.error(error.message);
@@ -85,6 +123,8 @@ const Login = () => {
 								type="email"
 								className="form-control"
 								name="email"
+								value={user.email}
+								onChange={handleEmailPass}
 								placeholder="Username or Email"
 								required
 							/>
@@ -96,6 +136,8 @@ const Login = () => {
 								name="password"
 								className="form-control"
 								placeholder="password"
+								value={user.password}
+								onChange={handleEmailPass}
 								required
 							/>
 						</div>
@@ -104,7 +146,7 @@ const Login = () => {
 							<label className="form-check-label" htmlFor="check">
 								Remember Me
 							</label>
-							<Link to="/forgot">Forgot Password?</Link>
+							<Link to="/forgotPassword">Forgot Password?</Link>
 						</div>
 
 						<div className="col-md-12 mt-3 mb-4">
@@ -117,7 +159,7 @@ const Login = () => {
 					</form>
 				</div>
 				<div className="col-md-8 text-center">
-					<p>Or</p>
+					<p className="text-danger mt-3" id="error" />
 					<div>
 						<button className="btn btn-social" onClick={fbLogIn}>
 							<img className="social-logo" src={facebook} alt="fb" />

@@ -2,6 +2,7 @@ import React, { createContext, useState } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import PrivateRoute from './components/privateRoute/PrivateRoute';
 import Booking from './pages/Booking';
+import Password from './pages/forgotPassword/Password';
 import Home from './pages/Home';
 import Hotels from './pages/Hotels';
 import NotFound from './pages/NotFound';
@@ -20,13 +21,15 @@ const App = () => {
 					<Route exact={true} path="/">
 						<Home />
 					</Route>
-					<Route path="/login">
+					<Route exact path="/login">
 						<Login />
 					</Route>
-					<Route path="/signup">
+					<Route exact path="/signup">
 						<SignUp />
 					</Route>
-
+					<Route path="/forgotPassword">
+						<Password />
+					</Route>
 					<Route exact path="/:slug">
 						<Booking />
 					</Route>

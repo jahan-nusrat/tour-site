@@ -2,7 +2,6 @@ import React from 'react';
 import { FaStar } from 'react-icons/fa';
 
 const RoomDetails = ({ room }) => {
-	console.log(room);
 	return (
 		<div className="row align-items-center my-4">
 			<div className="col-lg-5">

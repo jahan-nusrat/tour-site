@@ -10,6 +10,7 @@ function Booking () {
 	const [ bookingInfo, setBookingInfo ] = useContext(UserContext);
 
 	const { slug } = useParams();
+
 	const [ bookPlace, setBookPlace ] = useState({
 		origin      : '',
 		destination : '',
@@ -38,12 +39,12 @@ function Booking () {
 			});
 			setBookingInfo({
 				...bookingInfo,
-				destination : name
+				destination : name,
+				slug        : slug
 			});
 		},
 		[ slug ]
 	);
-
 	const handleDate = (e) => {
 		setBookPlace({
 			...bookPlace,
@@ -76,7 +77,7 @@ function Booking () {
 		<div className="booking">
 			<div className="container">
 				<Navigation logo={logo} />
-				<div className="booking-box row align-items-center justify-content-around">
+				<div className="booking-box row align-items-center justify-content-between">
 					<div className="place-info col-lg-5">
 						<h1>{place.name}</h1>
 						<p>{place.info}</p>
@@ -97,6 +98,7 @@ function Booking () {
 							<div className="form-group col-lg-10">
 								<label htmlFor="destination">Destination</label>
 								<input
+									disabled
 									name="destination"
 									value={bookPlace.destination}
 									type="text"
