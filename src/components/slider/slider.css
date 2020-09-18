@@ -48,6 +48,10 @@
     font-size: 2rem;
 }
 
+.card-box a {
+    color: #fff;
+}
+
 .col-lg-4 {
     padding-left: 15px !important;
     padding-right: 0 !important;

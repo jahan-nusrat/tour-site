@@ -11,6 +11,7 @@ var fakeData = [
 		name   : "COX'S BAZAR",
 		title  : 'coxs',
 		img    : cox,
+		slug   : 'coxbazar',
 		info   :
 			'Cox’s Bazar is a town on the southeast coast of Bangladesh. It’s known for its very long, sandy beachfront, stretching from Sea Beach in the north to Kolatoli Beach in the south. Aggameda Khyang monastery is home to bronze statues and centuries-old Buddhist manuscripts. South of town, the tropical rainforest of Himchari National Park has waterfalls and many birds. North, sea turtles breed on nearby Sonadia Island.',
 		url    : img1,
@@ -64,7 +65,7 @@ var fakeData = [
 		title  : 'sree',
 		info   :
 			'Sreemangal is situated in Moulvibazar district in sylhet division. Sreemangal is an Upazila. It is famous for tea garden. Rain all time occurs here. Nature has adorned sreemangal with green tress. Its natural scenery is very charming. It soothes one’s eyes. Birds are twittering always here. The first tea garden in Bangladesh which names “Malni chho ra tea garden” is here. Only one tea research institute in Bangladesh which name is BTRI (Bangladesh Tea Research Institute) is situated in Sreemangal',
-
+		slug   : 'sreemangal',
 		url    : img2,
 		lat    : 24.3065193,
 		long   : 91.72955030000003,
@@ -116,7 +117,7 @@ var fakeData = [
 		title  : 'sundar',
 		info   :
 			'The Sundarbans forest is about 10,000 sq km across India and Bangladesh, of which 40% lies in India, and is home to many rare and globally threatened wildlife species such as the estuarine crocodile (Crocodilus porosus), royal Bengal tiger (Panthera tigris), Water monitor lizard (Varanus salvator), Gangetic dolphin (Platinista gangetica), and olive ridley turtle (Lepidochelys olivacea).',
-
+		slug   : 'sundarban',
 		url    : img3,
 		lat    : 21.9497,
 		long   : 89.1833,

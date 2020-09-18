@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat&display=swap');
+.booking {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../Image/cox.png') center/cover;
+    height: 100vh;
+    font-weight: 400;
+    position: relative;
+}
+
+.booking h1 {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 5rem;
+    letter-spacing: 2.5px;
+    color: #fff;
+}
+
+.booking p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    color: #fff;
+    line-height: 24px;
+}
+
+.form-container {
+    background: #fff;
+    padding: 2rem 0;
+    border-radius: 8px;
+}
+
+.date {
+    padding: 0 1.1rem !important;
+}
+
+form label {
+    color: #818181;
+    font-family: 'Montserrat', sans-serif;
+}
+
+input {
+    font-family: 'Montserrat', sans-serif;
+    color: #000;
+}
+
+.btn-custom {
+    background-color: #F9A51A;
+    font-weight: 500;
+}
+
+.booking-box {
+    margin-top: 4rem;
+}
