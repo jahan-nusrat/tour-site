@@ -9,7 +9,7 @@ const Navigation = ({ logo }) => {
 					<img src={logo} alt="logo" className="img-fluid logo" />
 				</div>
 				<div className="col-lg-4">
-					<input class="form-control" type="text" />
+					<input className="form-control" type="text" />
 				</div>
 
 				<div className="col-lg-5">

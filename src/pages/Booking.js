@@ -1,15 +1,15 @@
-import React, { useEffect, useReducer, useState } from 'react';
-import { Link, useHistory, useParams } from 'react-router-dom';
+import React, { useContext, useEffect, useState } from 'react';
+import { useHistory, useParams } from 'react-router-dom';
 import './booking.css';
 import Navigation from '../components/nav/Navigation';
-import { useStateValue } from '../components/reducer/StateProvider';
 import fakeData from '../fakeData/FakeData';
 import logo from '../Image/white.png';
+import { UserContext } from '../App';
 
 function Booking () {
+	const [ bookingInfo, setBookingInfo ] = useContext(UserContext);
+	console.log(bookingInfo);
 	const { slug } = useParams();
-	const [ { bookingInfo }, dispatch ] = useStateValue();
-
 	const [ bookPlace, setBookPlace ] = useState({
 		origin      : '',
 		destination : '',
@@ -35,11 +35,19 @@ function Booking () {
 			...bookPlace,
 			destination : name
 		});
+		setBookingInfo({
+			...bookingInfo,
+			destination : name
+		});
 	}, []);
 
 	const handleDate = (e) => {
 		setBookPlace({
 			...bookPlace,
+			[e.target.name]: e.target.value
+		});
+		setBookingInfo({
+			...bookingInfo,
 			[e.target.name]: e.target.value
 		});
 	};
@@ -49,21 +57,16 @@ function Booking () {
 			...bookPlace,
 			[e.target.name]: e.target.value
 		});
+		setBookingInfo({
+			...bookingInfo,
+			[e.target.name]: e.target.value
+		});
 	};
 
 	const history = useHistory();
 	const handleSubmit = (e) => {
 		e.preventDefault();
 		history.push(`/${slug}/hotels`);
-	};
-
-	const clickHandle = () => {
-		dispatch({
-			type : 'BOOKING-BUTTON',
-			item : {
-				...bookPlace
-			}
-		});
 	};
 
 	return (
@@ -85,6 +88,7 @@ function Booking () {
 									onChange={handleInput}
 									type="text"
 									className="form-control"
+									required
 								/>
 							</div>
 							<div className="form-group col-lg-10">
@@ -94,6 +98,7 @@ function Booking () {
 									value={bookPlace.destination}
 									type="text"
 									className="form-control"
+									required
 								/>
 							</div>
 							<div className="form-row justify-content-center">
@@ -105,6 +110,7 @@ function Booking () {
 										value={bookPlace.from}
 										type="date"
 										className="form-control"
+										required
 									/>
 								</div>
 								<div className="form-group col-lg-5 date">
@@ -115,16 +121,12 @@ function Booking () {
 										value={bookPlace.to}
 										type="date"
 										className="form-control"
+										required
 									/>
 								</div>
 							</div>
 							<div className="col-lg-10">
-								<input
-									onClick={clickHandle}
-									className="btn form-control btn-custom"
-									type="submit"
-									value="Start Booking"
-								/>
+								<input className="btn form-control btn-custom" type="submit" value="Start Booking" />
 							</div>
 						</form>
 					</div>

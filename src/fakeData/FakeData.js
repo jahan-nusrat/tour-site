@@ -19,9 +19,10 @@ var fakeData = [
 		long   : 92.0058,
 		hotels : [
 			{
+				id       : 89310,
 				name     : 'Royal Tulip Sea Pearl Beach Resort & Spa',
 				info     :
-					"Royal Tulip Sea Pearl Beach Resort & Spa Cox's Bazar has a restaurant, bar, a shared lounge and garden in Cox's Bazar. With free WiFi, this 5-star resort offers a private beach area and room service.",
+					"Royal Tulip Sea Pearl Beach Resort & Spa Cox's Bazar has a restaurant, bar, a shared lounge and garden in Cox's Bazar.",
 				img      : room1,
 				facility : 'Cancellation flexibility available',
 				ratings  : 4.9,
@@ -32,9 +33,9 @@ var fakeData = [
 				bedrooms : 2
 			},
 			{
+				id       : 29487,
 				name     : 'Windy Terrace Boutique Hotel',
-				info     :
-					"Windy Terrace Boutique Hotel features air-conditioned accommodation in Cox's Bazar. Among the facilities of this property are a restaurant, a 24-hour front desk and room service, along with free WiFi.",
+				info     : "Windy Terrace Boutique Hotel features air-conditioned accommodation in Cox's Bazar. ",
 				img      : room2,
 				facility : 'Cancellation flexibility available',
 				ratings  : 4.7,
@@ -45,9 +46,10 @@ var fakeData = [
 				bedrooms : 2
 			},
 			{
+				id       : 28458,
 				name     : 'Shopno Bilash Holiday Suites',
 				info     :
-					"Located in Cox's Bazar, Shopno Bilash Holiday Suites features accommodation with private balconies. The accommodation provides a 24-hour front desk and room service for guest.",
+					"Located in Cox's Bazar, Shopno Bilash Holiday Suites features accommodation with private balconies. ",
 				img      : room3,
 				facility : 'Cancellation flexibility available',
 				ratings  : 4.9,
@@ -71,9 +73,10 @@ var fakeData = [
 		long   : 91.72955030000003,
 		hotels : [
 			{
+				id       : 48662,
 				name     : 'Royal Tulip Sea Pearl Beach Resort & Spa',
 				info     :
-					"Royal Tulip Sea Pearl Beach Resort & Spa Cox's Bazar has a restaurant, bar, a shared lounge and garden in Cox's Bazar. With free WiFi, this 5-star resort offers a private beach area and room service.",
+					"Royal Tulip Sea Pearl Beach Resort & Spa Cox's Bazar has a restaurant, bar, a shared lounge and garden in Cox's Bazar. ",
 				img      : room1,
 				facility : 'Cancellation flexibility available',
 				ratings  : 4.9,
@@ -84,9 +87,9 @@ var fakeData = [
 				bedrooms : 2
 			},
 			{
+				id       : 38912,
 				name     : 'Windy Terrace Boutique Hotel',
-				info     :
-					"Windy Terrace Boutique Hotel features air-conditioned accommodation in Cox's Bazar. Among the facilities of this property are a restaurant, a 24-hour front desk and room service, along with free WiFi.",
+				info     : "Windy Terrace Boutique Hotel features air-conditioned accommodation in Cox's Bazar. ",
 				img      : room2,
 				facility : 'Cancellation flexibility available',
 				ratings  : 4.7,
@@ -97,9 +100,10 @@ var fakeData = [
 				bedrooms : 2
 			},
 			{
+				id       : 34567,
 				name     : 'Shopno Bilash Holiday Suites',
 				info     :
-					"Located in Cox's Bazar, Shopno Bilash Holiday Suites features accommodation with private balconies. The accommodation provides a 24-hour front desk and room service for guest.",
+					"Located in Cox's Bazar, Shopno Bilash Holiday Suites features accommodation with private balconies. ",
 				img      : room3,
 				facility : 'Cancellation flexibility available',
 				ratings  : 4.9,
@@ -123,9 +127,10 @@ var fakeData = [
 		long   : 89.1833,
 		hotels : [
 			{
+				id       : 123456,
 				name     : 'Royal Tulip Sea Pearl Beach Resort & Spa',
 				info     :
-					"Royal Tulip Sea Pearl Beach Resort & Spa Cox's Bazar has a restaurant, bar, a shared lounge and garden in Cox's Bazar. With free WiFi, this 5-star resort offers a private beach area and room service.",
+					"Royal Tulip Sea Pearl Beach Resort & Spa Cox's Bazar has a restaurant, bar, a shared lounge and garden in Cox's Bazar. ",
 				img      : room1,
 				facility : 'Cancellation flexibility available',
 				ratings  : 4.9,
@@ -136,9 +141,9 @@ var fakeData = [
 				bedrooms : 2
 			},
 			{
+				id       : 34565,
 				name     : 'Windy Terrace Boutique Hotel',
-				info     :
-					"Windy Terrace Boutique Hotel features air-conditioned accommodation in Cox's Bazar. Among the facilities of this property are a restaurant, a 24-hour front desk and room service, along with free WiFi.",
+				info     : "Windy Terrace Boutique Hotel features air-conditioned accommodation in Cox's Bazar. ",
 				img      : room2,
 				facility : 'Cancellation flexibility available',
 				ratings  : 4.7,
@@ -149,9 +154,10 @@ var fakeData = [
 				bedrooms : 2
 			},
 			{
+				id       : 98756,
 				name     : 'Shopno Bilash Holiday Suites',
 				info     :
-					"Located in Cox's Bazar, Shopno Bilash Holiday Suites features accommodation with private balconies. The accommodation provides a 24-hour front desk and room service for guest.",
+					"Located in Cox's Bazar, Shopno Bilash Holiday Suites features accommodation with private balconies. ",
 				img      : room3,
 				facility : 'Cancellation flexibility available',
 				ratings  : 4.9,
