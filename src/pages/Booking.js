@@ -8,7 +8,7 @@ import { UserContext } from '../App';
 
 function Booking () {
 	const [ bookingInfo, setBookingInfo ] = useContext(UserContext);
-	console.log(bookingInfo);
+
 	const { slug } = useParams();
 	const [ bookPlace, setBookPlace ] = useState({
 		origin      : '',
@@ -22,24 +22,27 @@ function Booking () {
 		info : ''
 	});
 
-	useEffect(() => {
-		const filterPlace = fakeData.filter((property) => {
-			return property.slug === slug;
-		});
-		const { name, info } = filterPlace[0];
-		setPlace({
-			name,
-			info
-		});
-		setBookPlace({
-			...bookPlace,
-			destination : name
-		});
-		setBookingInfo({
-			...bookingInfo,
-			destination : name
-		});
-	}, []);
+	useEffect(
+		() => {
+			const filterPlace = fakeData.filter((property) => {
+				return property.slug === slug;
+			});
+			const { name, info } = filterPlace[0];
+			setPlace({
+				name,
+				info
+			});
+			setBookPlace({
+				...bookPlace,
+				destination : name
+			});
+			setBookingInfo({
+				...bookingInfo,
+				destination : name
+			});
+		},
+		[ slug ]
+	);
 
 	const handleDate = (e) => {
 		setBookPlace({
@@ -66,7 +69,7 @@ function Booking () {
 	const history = useHistory();
 	const handleSubmit = (e) => {
 		e.preventDefault();
-		history.push(`/${slug}/hotels`);
+		history.push(`/hotels/${slug}`);
 	};
 
 	return (

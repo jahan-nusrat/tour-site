@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat&display=swap');
+.nav li a {
+    color: #000;
+    font-weight: 500;
+}
+
+.hotels {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.details h2 {
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 29px;
+}
+
+.details p {
+    color: #2B2B2B;
+}
+
+.room-info h4 {
+    font-size: 18px;
+    line-height: 26px;
+}
+
+.description p {
+    font-size: 14px;
+    color: #6A6A6A;
+    margin-right: 0.8rem;
+}
+
+.title {
+    color: #6A6A6A;
+    font-size: 14px;
+}
+
+.room-bottom {
+    font-size: 14px;
+}
+
+.star {
+    color: #FFAF38;
+    margin-top: -4.5px;
+}
+
+.rating {
+    margin-right: 1rem;
+}
+
+.room-bottom span {
+    margin-left: 0.8rem;
+    color: #898989;
+}
